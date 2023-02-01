@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!-- Page Title-->
+{% block title %}ask me{% endblock %}
+
+<!-- Page Content -->
+{% block body %}
+
+    <div class="main">
+        <div class="container">
+
+            <form class="form" method="post">
+                {% csrf_token %}
+                <h2 class="form_title">Your Curiosity</h2>
+                {% crispy form %}
+                {% if res %}
+                <div class="com-text">
+                    {{ res }}
+                </div>
+                {% endif %}
+                <small class="text-muted" style="margin-top: 80%;">
+                <a href="{% url 'logout' %}">logout</a> 
+                  </small>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+config.*
+env/*
+*.sqlite3
+.vscode/*
